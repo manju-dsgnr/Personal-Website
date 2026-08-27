@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. Maharaj Kumar — Astrology Website Case Study · Manjunatha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .cs-nav { position: sticky; top: 0; z-index: 20; background: rgba(241,239,233,.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .cs-nav-inner { max-width: 1040px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .cs-back { display: inline-flex; align-items: center; gap: 10px; font-family: var(--disp); font-weight: 500; font-size: 15px; transition: gap .3s var(--ease); }
+  .cs-back:hover { gap: 16px; }
+  .cs-back .ar { color: var(--accent); }
+  .cs-nav .badge { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); display: inline-block; }
+  .cs-nav-name { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); display: inline-flex; align-items: center; gap: 10px; }
+
+  .cs-hero { max-width: 1040px; margin: 0 auto; padding: 72px 32px 8px; }
+  .cs-hero .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .cs-hero .eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--accent); }
+  .cs-hero h1 { font-family: var(--disp); font-size: clamp(40px,6vw,80px); font-weight: 600; letter-spacing: -.035em; line-height: .98; }
+  .cs-hero p { font-size: clamp(16px,1.7vw,19px); color: var(--muted); max-width: 62ch; margin-top: 20px; line-height: 1.55; }
+  .cs-meta { display: flex; flex-wrap: wrap; gap: 36px; margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line); }
+  .cs-meta div { display: flex; flex-direction: column; gap: 5px; }
+  .cs-meta .k { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+  .cs-meta .v { font-family: var(--disp); font-weight: 500; font-size: 15px; }
+
+  .cs-foot { max-width: 1040px; margin: 0 auto; padding: 40px 32px 96px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .cs-foot a { display: inline-flex; align-items: center; gap: 10px; font-family: var(--disp); font-weight: 500; font-size: 16px; transition: gap .3s var(--ease); }
+  .cs-foot a:hover { gap: 15px; }
+  .cs-foot .ar { color: var(--accent); }
+  .cs-foot .credit { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+
+  @media (max-width: 680px) {
+    .cs-nav-inner, .cs-hero, .cs-foot { padding-left: 18px; padding-right: 18px; }
+    .cs-hero { padding-top: 48px; }
+    .cs-meta { gap: 24px; }
+  }
+
+  .ncase-slide-group { display: flex; flex-direction: column; gap: 0; }
+  .ncase-slide-group .ncase-slide { border-radius: 0; }
+  .ncase-slide-group .ncase-slide:first-child { border-radius: 16px 16px 0 0; }
+  .ncase-slide-group .ncase-slide:last-child { border-radius: 0 0 16px 16px; }
+</style>
+</head>
+<body>
+  <nav class="cs-nav">
+    <div class="cs-nav-inner">
+      <a class="cs-back" href="Portfolio.html#ui" data-cursor><span class="ar">←</span> Back to work</a>
+      <span class="cs-nav-name"><span class="badge"></span> Dr. Maharaj Kumar</span>
+    </div>
+  </nav>
+
+  <header class="cs-hero">
+    <div class="eyebrow">Case Study · Client Project</div>
+    <h1>Dr. Maharaj Kumar.</h1>
+    <p>A spiritual and modern astrology website designed to build trust, simplify consultations, and make booking services effortless — for a practicing Vedic astrologer and his clients.</p>
+    <div class="cs-meta">
+      <div><span class="k">Role</span><span class="v">UX · UI Design</span></div>
+      <div><span class="k">Type</span><span class="v">Client project</span></div>
+      <div><span class="k">Focus</span><span class="v">Astrology · Spiritual services</span></div>
+      <div><span class="k">Scope</span><span class="v">Fully responsive site</span></div>
+    </div>
+  </header>
+
+  <div class="ncase-deck" id="deck"></div>
+
+  <footer class="cs-foot">
+    <a href="Portfolio.html#ui" data-cursor><span class="ar">←</span> Back to all work</a>
+    <span class="credit">Dr. Maharaj Kumar · Astrology website case study</span>
+  </footer>
+
+  <script>
+    const slides = [
+      ['assets/astrologer/01-cover.webp', 'A digital presence for spiritual trust — project intro', 2304, 1262],
+      ['assets/astrologer/02-devices-overview.webp', 'Astrology website design — laptop and mobile presentation', 2304, 1536],
+      ['assets/astrologer/03-design-language.webp', 'Design language — icon system and visual style', 2304, 1536],
+      ['assets/astrologer/04-visual-identity.webp', 'Visual identity — color palette and typography', 2304, 1536],
+      ['assets/astrologer/05-final-experience.webp', 'Final experience — fully responsive across devices', 2303, 1536],
+    ];
+    const mobileGroup = [
+      ['assets/astrologer/06-mobile-hero.webp', 'Mobile homepage — hero, services, about and stats', 2304, 2274],
+      ['assets/astrologer/07-mobile-scroll.webp', 'Mobile scroll — pooja services, testimonials, contact and footer', 2304, 3831],
+    ];
+    const afterGroup = [
+      ['assets/astrologer/08-quote.webp', 'Designed for clarity. Built for connection.', 2304, 1230],
+    ];
+    const deck = document.getElementById('deck');
+    function makeSlide([src, alt, w, h]) {
+      const fig = document.createElement('div');
+      fig.className = 'ncase-slide reveal';
+      const img = document.createElement('img');
+      img.src = src; img.alt = alt; img.loading = 'lazy'; img.decoding = 'async';
+      img.width = w; img.height = h;
+      fig.appendChild(img);
+      return fig;
+    }
+    slides.forEach((s) => deck.appendChild(makeSlide(s)));
+    const group = document.createElement('div');
+    group.className = 'ncase-slide-group reveal';
+    mobileGroup.forEach((s) => group.appendChild(makeSlide(s)));
+    deck.appendChild(group);
+    afterGroup.forEach((s) => deck.appendChild(makeSlide(s)));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.ncase-slide, .ncase-slide-group').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>

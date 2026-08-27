@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Houzeo — Choose a Feature · Manjunatha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .hz-scope { --accent: #2A6FE8; }
+
+  .cs-nav { position: sticky; top: 0; z-index: 20; background: rgba(241,239,233,.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .cs-nav-inner { max-width: 1040px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .cs-back { display: inline-flex; align-items: center; gap: 10px; font-family: var(--disp); font-weight: 500; font-size: 15px; transition: gap .3s var(--ease); }
+  .cs-back:hover { gap: 16px; }
+  .cs-back .ar { color: var(--accent); }
+  .cs-nav .badge { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); display: inline-block; }
+  .cs-nav-name { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); display: inline-flex; align-items: center; gap: 10px; }
+
+  .hz-pick-hero { max-width: 1040px; margin: 0 auto; padding: 88px 32px 8px; }
+  .hz-pick-hero .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .hz-pick-hero .eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--accent); }
+  .hz-pick-hero h1 { font-family: var(--disp); font-size: clamp(38px,5.6vw,68px); font-weight: 600; letter-spacing: -.03em; line-height: 1.02; }
+  .hz-pick-hero p { font-size: clamp(16px,1.6vw,18px); color: var(--muted); max-width: 58ch; margin-top: 18px; line-height: 1.55; }
+
+  .hz-picks { max-width: 1040px; margin: 56px auto 0; padding: 0 32px 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .hz-pick { position: relative; display: block; border-radius: 20px; border: 1px solid var(--line); overflow: hidden; background: #fff; transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+  .hz-pick:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(24,22,15,.12); }
+  .hz-pick-thumb { aspect-ratio: 4/3; overflow: hidden; }
+  .hz-pick-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+  .hz-pick-body { padding: 26px 26px 30px; }
+  .hz-pick-num { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; display: block; }
+  .hz-pick-body h2 { font-family: var(--disp); font-size: 24px; font-weight: 600; letter-spacing: -.02em; margin-bottom: 8px; }
+  .hz-pick-body p { font-size: 15px; color: var(--muted); line-height: 1.55; }
+  .hz-pick-arrow { position: absolute; top: 26px; right: 26px; width: 40px; height: 40px; border-radius: 50%; background: #fff; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: 16px; transition: transform .35s var(--ease), background .35s var(--ease); }
+  .hz-pick:hover .hz-pick-arrow { transform: translate(4px,-4px); background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  @media (max-width: 760px) {
+    .hz-picks { grid-template-columns: 1fr; }
+    .cs-nav-inner, .hz-pick-hero { padding-left: 18px; padding-right: 18px; }
+    .hz-picks { padding-left: 18px; padding-right: 18px; }
+  }
+</style>
+</head>
+<body class="hz-scope">
+  <nav class="cs-nav">
+    <div class="cs-nav-inner">
+      <a class="cs-back" href="Portfolio.html#work" data-cursor><span class="ar">←</span> Back to work</a>
+      <span class="cs-nav-name"><span class="badge"></span> Houzeo</span>
+    </div>
+  </nav>
+
+  <header class="hz-pick-hero">
+    <div class="eyebrow">Houzeo · US Real Estate</div>
+    <h1>Two features. Same mission — help buyers decide faster.</h1>
+    <p>Pick a feature to explore. Both shipped for real home buyers on Houzeo.com.</p>
+  </header>
+
+  <div class="hz-picks">
+    <a class="hz-pick reveal" href="Houzeo Case Study.html" data-cursor>
+      <div class="hz-pick-thumb"><img src="assets/houzeo/pick-save-search.png" alt="Houzeo Collections — save search feature" loading="eager" /></div>
+      <div class="hz-pick-body">
+        <span class="hz-pick-num">01 · Collections</span>
+        <h2>Save Search & Collections</h2>
+        <p>Buyers save homes across a dozen tabs and lose track of what they liked. Collections lets them save, group and revisit homes without leaving the browsing journey.</p>
+      </div>
+      <span class="hz-pick-arrow">→</span>
+    </a>
+
+    <a class="hz-pick reveal" href="Houzeo Tags Case Study.html" data-cursor>
+      <div class="hz-pick-thumb"><img src="assets/houzeo/pick-quick-filters.png" alt="Houzeo Quick Filters — tags feature" loading="lazy" /></div>
+      <div class="hz-pick-body">
+        <span class="hz-pick-num">02 · Quick Filters</span>
+        <h2>Quick Filters (Tags)</h2>
+        <p>Key signals like price cuts and open houses were buried inside listings. Quick Filters surfaces them as scannable tags right on the card.</p>
+      </div>
+      <span class="hz-pick-arrow">→</span>
+    </a>
+  </div>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>

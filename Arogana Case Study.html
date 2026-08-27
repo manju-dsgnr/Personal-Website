@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arogana — Travel Landing Page Case Study · Manjunatha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .aro-scope { --accent: #1C35B3; }
+
+  .cs-nav { position: sticky; top: 0; z-index: 20; background: rgba(241,239,233,.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .cs-nav-inner { max-width: 1040px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .cs-back { display: inline-flex; align-items: center; gap: 10px; font-family: var(--disp); font-weight: 500; font-size: 15px; transition: gap .3s var(--ease); }
+  .cs-back:hover { gap: 16px; }
+  .cs-back .ar { color: var(--accent); }
+  .cs-nav .badge { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); display: inline-block; }
+  .cs-nav-name { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); display: inline-flex; align-items: center; gap: 10px; }
+
+  .cs-hero { max-width: 1040px; margin: 0 auto; padding: 72px 32px 8px; }
+  .cs-hero .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .cs-hero .eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--accent); }
+  .cs-hero h1 { font-family: var(--disp); font-size: clamp(40px,6vw,80px); font-weight: 600; letter-spacing: -.035em; line-height: .98; }
+  .cs-hero p { font-size: clamp(16px,1.7vw,19px); color: var(--muted); max-width: 62ch; margin-top: 20px; line-height: 1.55; }
+  .cs-meta { display: flex; flex-wrap: wrap; gap: 36px; margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line); }
+  .cs-meta div { display: flex; flex-direction: column; gap: 5px; }
+  .cs-meta .k { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+  .cs-meta .v { font-family: var(--disp); font-weight: 500; font-size: 15px; }
+
+  .cs-foot { max-width: 1040px; margin: 0 auto; padding: 40px 32px 96px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .cs-foot a { display: inline-flex; align-items: center; gap: 10px; font-family: var(--disp); font-weight: 500; font-size: 16px; transition: gap .3s var(--ease); }
+  .cs-foot a:hover { gap: 15px; }
+  .cs-foot .ar { color: var(--accent); }
+  .cs-foot .credit { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+
+  /* section dividers inside the deck — marks the shift from research to final site */
+  .ncase-divider { max-width: 1040px; margin: 56px auto 4px; padding: 0 10px; display: flex; align-items: center; gap: 18px; }
+  .ncase-divider .n { font-family: var(--disp); font-weight: 600; font-size: clamp(22px,3vw,30px); letter-spacing: -.02em; white-space: nowrap; }
+  .ncase-divider .line { flex: 1; height: 1px; background: var(--line); }
+  .ncase-divider .tag { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); white-space: nowrap; }
+  .ncase-deck:first-of-type { margin-top: 8px; }
+  .ncase-deck { gap: 0; }
+  .ncase-slide { border-radius: 0; }
+
+  @media (max-width: 680px) {
+    .cs-nav-inner, .cs-hero, .cs-foot { padding-left: 18px; padding-right: 18px; }
+    .cs-hero { padding-top: 48px; }
+    .cs-meta { gap: 24px; }
+    .ncase-divider { padding: 0 18px; margin: 40px auto 4px; }
+  }
+</style>
+</head>
+<body class="aro-scope">
+  <nav class="cs-nav">
+    <div class="cs-nav-inner">
+      <a class="cs-back" href="Portfolio.html#ui" data-cursor><span class="ar">←</span> Back to work</a>
+      <span class="cs-nav-name"><span class="badge"></span> Arogana</span>
+    </div>
+  </nav>
+
+  <header class="cs-hero">
+    <div class="eyebrow">Case Study · Landing Page Design</div>
+    <h1>Arogana.</h1>
+    <p>A modern travel agency blending curated experiences with seamless booking — designed for dreamers and explorers who seek comfort, style and discovery. From research and branding through to the final responsive site.</p>
+    <div class="cs-meta">
+      <div><span class="k">Role</span><span class="v">UX · UI · Branding</span></div>
+      <div><span class="k">Type</span><span class="v">Landing page design</span></div>
+      <div><span class="k">Focus</span><span class="v">Tour & travel</span></div>
+      <div><span class="k">Scope</span><span class="v">Research → final site</span></div>
+    </div>
+  </header>
+
+  <div class="ncase-deck" id="deck-main"></div>
+
+  <div class="ncase-divider reveal">
+    <span class="n">The Full Site</span>
+    <span class="line"></span>
+    <span class="tag">Final design</span>
+  </div>
+  <div class="ncase-deck" id="deck-site"></div>
+
+  <footer class="cs-foot">
+    <a href="Portfolio.html#ui" data-cursor><span class="ar">←</span> Back to all work</a>
+    <span class="credit">Arogana · Landing page case study</span>
+  </footer>
+
+  <script>
+    const mainSlides = [
+      ['assets/arogana/13-laptop.webp', 'Final homepage — laptop presentation', 1440, 960],
+      ['assets/arogana/15-overview.webp', 'Project overview — Arogana landing page summary', 1440, 1849],
+      ['assets/arogana/06-logo.webp', 'Branding identity: logo mark and flight-icon meaning', 1440, 765],
+      ['assets/arogana/01-timeline.webp', '01 — Project timeline: strategy, ideation and design stages', 1440, 878],
+      ['assets/arogana/09-brand-appicon.webp', 'Branding identity: app icon and business card mockup', 1440, 1343],
+      ['assets/arogana/02-problems.webp', '02 — Problems & solutions: core UX issues and fixes', 1440, 1858],
+      ['assets/arogana/14-mobile.webp', 'Final homepage — mobile presentation', 1440, 961],
+      ['assets/arogana/03-research.webp', '03 — User research: empathy map — says, thinks, does, feels', 1440, 1281],
+      ['assets/arogana/04-typography.webp', '04 — Typography & colours: Glancyr type family and palette', 1440, 1650],
+      ['assets/arogana/05-survey.webp', '05 — User survey: traveler booking habits and worries', 1440, 1345],
+      ['assets/arogana/07-brand-env.webp', 'Branding identity: billboard, signage, tote bag and truck livery', 1440, 3118],
+      ['assets/arogana/08-brand-collateral.webp', 'Branding identity: ID cards, business cards and window display', 1440, 2269],
+    ];
+    const siteSlides = [
+      ['assets/arogana/10-site-top.webp', 'Homepage — navigation, hero and about us', 1440, 2784],
+      ['assets/arogana/11-site-mid.webp', 'Homepage — why choose us, tour packages and testimonials', 1440, 3199],
+      ['assets/arogana/12-site-bottom.webp', 'Homepage — FAQs, blog, newsletter and footer', 1440, 3344],
+      ['assets/arogana/16-thankyou.webp', 'Thank you for watching', 1440, 917],
+    ];
+    function buildDeck(id, slides) {
+      const deck = document.getElementById(id);
+      slides.forEach(([src, alt, w, h]) => {
+        const fig = document.createElement('div');
+        fig.className = 'ncase-slide reveal';
+        const img = document.createElement('img');
+        img.src = src; img.alt = alt; img.loading = 'lazy'; img.decoding = 'async';
+        img.width = w; img.height = h;
+        fig.appendChild(img);
+        deck.appendChild(fig);
+      });
+    }
+    buildDeck('deck-main', mainSlides);
+    buildDeck('deck-site', siteSlides);
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.ncase-slide, .ncase-divider').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>

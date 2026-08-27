@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Houzeo — Quick Filters (Tags) Case Study · Manjunatha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .hz-scope { --accent: #2A6FE8; }
+
+  .cs-nav { position: sticky; top: 0; z-index: 20; background: rgba(241,239,233,.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .cs-nav-inner { max-width: 1040px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .cs-back { display: inline-flex; align-items: center; gap: 10px; font-family: var(--disp); font-weight: 500; font-size: 15px; transition: gap .3s var(--ease); }
+  .cs-back:hover { gap: 16px; }
+  .cs-back .ar { color: var(--accent); }
+  .cs-nav .badge { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); display: inline-block; }
+  .cs-nav-name { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); display: inline-flex; align-items: center; gap: 10px; }
+
+  .cs-hero { max-width: 1040px; margin: 0 auto; padding: 72px 32px 8px; }
+  .cs-hero .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .cs-hero .eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--accent); }
+  .cs-hero h1 { font-family: var(--disp); font-size: clamp(40px,6vw,80px); font-weight: 600; letter-spacing: -.035em; line-height: .98; }
+  .cs-hero p { font-size: clamp(16px,1.7vw,19px); color: var(--muted); max-width: 58ch; margin-top: 20px; line-height: 1.55; }
+  .cs-meta { display: flex; flex-wrap: wrap; gap: 36px; margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line); }
+  .cs-meta div { display: flex; flex-direction: column; gap: 5px; }
+  .cs-meta .k { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+  .cs-meta .v { font-family: var(--disp); font-weight: 500; font-size: 15px; }
+
+  .cs-foot { max-width: 1040px; margin: 0 auto; padding: 40px 32px 96px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .cs-foot a { display: inline-flex; align-items: center; gap: 10px; font-family: var(--disp); font-weight: 500; font-size: 16px; transition: gap .3s var(--ease); }
+  .cs-foot a:hover { gap: 15px; }
+  .cs-foot .ar { color: var(--accent); }
+  .cs-foot .credit { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+
+  @media (max-width: 680px) {
+    .cs-nav-inner, .cs-hero, .cs-foot { padding-left: 18px; padding-right: 18px; }
+    .cs-hero { padding-top: 48px; }
+    .cs-meta { gap: 24px; }
+  }
+  #deck { gap: 0; }
+  #deck .ncase-slide { border-radius: 0; border: none; box-shadow: none; }
+  #deck .ncase-slide:first-child { border-top-left-radius: 16px; border-top-right-radius: 16px; }
+  #deck .ncase-slide:last-child { border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; }
+</style>
+</head>
+<body class="hz-scope">
+  <nav class="cs-nav">
+    <div class="cs-nav-inner">
+      <a class="cs-back" href="Houzeo.html" data-cursor><span class="ar">←</span> Back to Houzeo</a>
+      <span class="cs-nav-name"><span class="badge"></span> Houzeo</span>
+    </div>
+  </nav>
+
+  <header class="cs-hero">
+    <div class="eyebrow">Case Study · Product Design</div>
+    <h1>Houzeo — Quick Filters.</h1>
+    <p>Buyers had to open every listing to check for price cuts, open houses, or new construction. I designed Quick Filters — a system of scannable tags that surface high-intent signals right on the listing card, so buyers decide faster.</p>
+    <div class="cs-meta">
+      <div><span class="k">Role</span><span class="v">UI/UX & Creative Designer</span></div>
+      <div><span class="k">Type</span><span class="v">Feature design · Research → ship</span></div>
+      <div><span class="k">Focus</span><span class="v">Tags, filters & listing signals</span></div>
+      <div><span class="k">Scope</span><span class="v">Research, visual system, UI</span></div>
+    </div>
+  </header>
+
+  <div class="ncase-deck" id="deck"></div>
+
+  <footer class="cs-foot">
+    <a href="Houzeo.html" data-cursor><span class="ar">←</span> Back to Houzeo</a>
+    <span class="credit">Houzeo · Quick Filters feature, 2024</span>
+  </footer>
+
+  <script>
+    const slides = [
+      ['assets/houzeo-tags/01.webp', "Finding a home is easy. Finding the right home isn't — the core problem", 1600, 1805],
+      ['assets/houzeo-tags/02.webp', 'Important signals were hard to find — the discoverability problem', 1600, 1832],
+      ['assets/houzeo-tags/03.webp', 'One problem, many user needs — four buyer personas mapped', 1600, 2280],
+      ['assets/houzeo-tags/04.webp', 'Why these tags — high-intent, actionable, discoverable signals', 1600, 2268],
+      ['assets/houzeo-tags/05.webp', 'A consistent system — default, hover and seen states for every tag', 1600, 1899],
+      ['assets/houzeo-tags/06.webp', 'The principles behind every tag — scannable, friendly, action-oriented', 1600, 1625],
+      ['assets/houzeo-tags/07.webp', "We're just getting started — the Quick Filters roadmap", 1600, 1069],
+      ['assets/houzeo-tags/08.webp', 'Tiny details, big decisions — the finished tag system in a listing card', 1600, 1265],
+    ];
+    const deck = document.getElementById('deck');
+    slides.forEach(([src, alt, w, h], i) => {
+      const fig = document.createElement('div');
+      fig.className = 'ncase-slide reveal';
+      const img = document.createElement('img');
+      img.src = src; img.alt = alt;
+      img.loading = i === 0 ? 'eager' : 'lazy';
+      img.decoding = 'async';
+      img.width = w; img.height = h;
+      fig.appendChild(img);
+      deck.appendChild(fig);
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.ncase-slide').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>

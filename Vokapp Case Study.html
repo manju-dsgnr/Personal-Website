@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vokapp — Vokabank Case Study · Manjunatha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* orange accent (site default) */
+  .vk-scope { --accent: #F0531C; }
+
+  .cs-nav { position: sticky; top: 0; z-index: 20; background: rgba(241,239,233,.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .cs-nav-inner { max-width: 1040px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .cs-back { display: inline-flex; align-items: center; gap: 10px; font-family: var(--disp); font-weight: 500; font-size: 15px; transition: gap .3s var(--ease); }
+  .cs-back:hover { gap: 16px; }
+  .cs-back .ar { color: var(--accent); }
+  .cs-nav-name { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); display: inline-flex; align-items: center; gap: 10px; }
+  .cs-nav-name .badge { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); display: inline-block; }
+
+  .cs-hero { max-width: 1040px; margin: 0 auto; padding: 72px 32px 8px; }
+  .cs-hero .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .cs-hero .eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--accent); }
+  .cs-hero h1 { font-family: var(--disp); font-size: clamp(40px,6vw,80px); font-weight: 600; letter-spacing: -.035em; line-height: .98; }
+  .cs-hero p { font-size: clamp(16px,1.7vw,19px); color: var(--muted); max-width: 58ch; margin-top: 20px; line-height: 1.55; }
+  .cs-meta { display: flex; flex-wrap: wrap; gap: 36px; margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line); }
+  .cs-meta div { display: flex; flex-direction: column; gap: 5px; }
+  .cs-meta .k { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+  .cs-meta .v { font-family: var(--disp); font-weight: 500; font-size: 15px; }
+
+  .cs-foot { max-width: 1040px; margin: 0 auto; padding: 48px 32px 96px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .cs-foot a { display: inline-flex; align-items: center; gap: 10px; font-family: var(--disp); font-weight: 500; font-size: 16px; transition: gap .3s var(--ease); }
+  .cs-foot a:hover { gap: 15px; }
+  .cs-foot .ar { color: var(--accent); }
+  .cs-foot .credit { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+
+  .vk-scope .ncase-deck { max-width: none; margin: 0; padding: 0; gap: 0; width: 100%; position: relative; }
+  .vk-scope .ncase-slide { border-radius: 0; box-shadow: none; border: none; border-top: 1px solid var(--line); background: var(--bg, #f1efe9); overflow: hidden; position: static; }
+  .vk-scope .ncase-slide:first-child { border-top: none; }
+  .vk-scope .ncase-slide { padding: 0 6%; }
+  .vk-scope .ncase-slide img { display: block; width: 100%; height: auto; box-sizing: border-box; }
+  @media (prefers-reduced-motion: reduce) {
+    .vk-scope .ncase-slide img { transition: none; transform: none; opacity: 1; }
+  }
+
+  @media (max-width: 680px) {
+    .cs-nav-inner, .cs-hero, .cs-foot { padding-left: 18px; padding-right: 18px; }
+    .cs-hero { padding-top: 48px; }
+    .cs-meta { gap: 24px; }
+  }
+</style>
+</head>
+<body class="vk-scope">
+  <nav class="cs-nav">
+    <div class="cs-nav-inner">
+      <a class="cs-back" href="Portfolio.html#work" data-cursor><span class="ar">←</span> Back to work</a>
+      <span class="cs-nav-name"><span class="badge"></span> Vokabank</span>
+    </div>
+  </nav>
+
+  <header class="cs-hero">
+    <div class="eyebrow">Case Study · UI/UX</div>
+    <h1>Vocabulary, learned out loud.</h1>
+    <p>Vokabank v2 — an interactive vocabulary learning app for students and teachers, rebuilt around capture-to-mastery games, AI definitions and a coin-and-rank progression system.</p>
+    <div class="cs-meta">
+      <div><span class="k">Role</span><span class="v">UI/UX Design</span></div>
+      <div><span class="k">Type</span><span class="v">Freelance · v2.0</span></div>
+      <div><span class="k">Focus</span><span class="v">Mobile · iOS + Android</span></div>
+      <div><span class="k">Scope</span><span class="v">24 frames · 4 modules</span></div>
+    </div>
+  </header>
+
+  <div class="ncase-deck" id="deck"></div>
+
+  <footer class="cs-foot">
+    <a href="Portfolio.html#work" data-cursor><span class="ar">←</span> Back to all work</a>
+    <span class="credit">Vokabank v2 · UI/UX case study, 2023</span>
+  </footer>
+
+  <script>
+    const slides = [
+      ['assets/vokabank/02.webp', 'Problem — vocabulary lists are boring, feedback loops are slow', 1500, 844],
+      ['assets/vokabank/03.webp', 'Users — students and teachers, one loop', 1500, 844],
+      ['assets/vokabank/04.webp', 'System architecture — Vokabank, Arsenal, Abyss, Quarantine', 1500, 844],
+      ['assets/vokabank/05.webp', 'Hero flow — add a word in six steps', 1500, 844],
+      ['assets/vokabank/06.webp', 'Created assets — mascot illustrations', 1500, 844],
+      ['assets/vokabank/07.webp', 'Selected screens — homepage, teacher selection, leaderboard, performance', 1500, 1138],
+      ['assets/vokabank/08.webp', 'Selected screens — word categories: Vokabank, Arsenal, Abyss, Quarantine', 1500, 1098],
+      ['assets/vokabank/09.webp', 'Credits — vocabulary made worth opening the app for', 1500, 844],
+    ];
+    const deck = document.getElementById('deck');
+    slides.forEach(([src, alt, w, h], i) => {
+      const fig = document.createElement('div');
+      fig.className = 'ncase-slide';
+      fig.style.zIndex = String(i + 1);
+      const img = document.createElement('img');
+      img.src = src; img.alt = alt;
+      img.loading = i === 0 ? 'eager' : 'lazy';
+      img.decoding = 'async';
+      img.width = w; img.height = h;
+      fig.appendChild(img);
+      deck.appendChild(fig);
+    });
+  </script>
+</body>
+</html>

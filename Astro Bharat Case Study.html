@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Astro Bharat — Brand Case Study · Manjunatha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* gold accent scoped to this case study */
+  .ab-scope { --accent: #B8862B; }
+
+  .cs-nav { position: sticky; top: 0; z-index: 20; background: rgba(241,239,233,.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .cs-nav-inner { max-width: 1040px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .cs-back { display: inline-flex; align-items: center; gap: 10px; font-family: var(--disp); font-weight: 500; font-size: 15px; transition: gap .3s var(--ease); }
+  .cs-back:hover { gap: 16px; }
+  .cs-back .ar { color: var(--accent); }
+  .cs-nav-name { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); display: inline-flex; align-items: center; gap: 10px; }
+  .cs-nav-name .badge { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); display: inline-block; }
+
+  .cs-hero { max-width: 1040px; margin: 0 auto; padding: 72px 32px 8px; }
+  .cs-hero .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .cs-hero .eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--accent); }
+  .cs-hero h1 { font-family: var(--disp); font-size: clamp(40px,6vw,80px); font-weight: 600; letter-spacing: -.035em; line-height: .98; }
+  .cs-hero p { font-size: clamp(16px,1.7vw,19px); color: var(--muted); max-width: 58ch; margin-top: 20px; line-height: 1.55; }
+  .cs-meta { display: flex; flex-wrap: wrap; gap: 36px; margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line); }
+  .cs-meta div { display: flex; flex-direction: column; gap: 5px; }
+  .cs-meta .k { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+  .cs-meta .v { font-family: var(--disp); font-weight: 500; font-size: 15px; }
+
+  .ab-caption { max-width: 1040px; margin: 0 auto; padding: 4px 32px 0; font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: var(--faint); }
+
+  /* Brand / Project switch */
+  .ab-switch-wrap { max-width: 1040px; margin: 40px auto 0; padding: 0 32px; display: flex; justify-content: center; }
+  .ab-switch { display: inline-flex; gap: 4px; padding: 4px; background: rgba(0,0,0,.04); border: 1px solid var(--line); border-radius: 100px; }
+  .ab-switch button { appearance: none; border: none; background: transparent; cursor: pointer; font-family: var(--disp); font-weight: 500; font-size: 15px; color: var(--muted); padding: 10px 26px; border-radius: 100px; transition: background .25s var(--ease), color .25s var(--ease); }
+  .ab-switch button.active { background: var(--accent); color: #fff; }
+  .ab-panel { display: none; }
+  .ab-panel.active { display: block; }
+  .ab-panel-head { max-width: 1040px; margin: 56px auto 4px; padding: 0 32px; }
+  .ab-panel-head .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .ab-panel-head .eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--accent); }
+  .ab-panel-head p { font-size: clamp(15px,1.5vw,17px); color: var(--muted); max-width: 62ch; line-height: 1.55; }
+
+  /* project deck reads as one continuous case-study document — no gaps between slides */
+  #deck-project { gap: 0; }
+  #deck-project .ncase-slide { border-radius: 0; border-left: none; border-right: none; box-shadow: none; border-top: none; }
+  #deck-project .ncase-slide:first-child { border-top: 1px solid var(--line); border-radius: 16px 16px 0 0; }
+  #deck-project .ncase-slide:last-child { border-radius: 0 0 16px 16px; }
+
+  @media (max-width: 680px) {
+    .ab-switch-wrap { padding: 0 18px; }
+    .ab-switch button { padding: 9px 18px; font-size: 14px; }
+    .ab-panel-head { padding: 0 18px; margin-top: 40px; }
+  }
+
+  .cs-foot { max-width: 1040px; margin: 0 auto; padding: 48px 32px 96px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .cs-foot a { display: inline-flex; align-items: center; gap: 10px; font-family: var(--disp); font-weight: 500; font-size: 16px; transition: gap .3s var(--ease); }
+  .cs-foot a:hover { gap: 15px; }
+  .cs-foot .ar { color: var(--accent); }
+  .cs-foot .credit { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+
+  @media (max-width: 680px) {
+    .cs-nav-inner, .cs-hero, .cs-foot, .ab-caption { padding-left: 18px; padding-right: 18px; }
+    .cs-hero { padding-top: 48px; }
+    .cs-meta { gap: 24px; }
+  }
+  .ncase-deck { gap: 0; }
+  .ncase-deck .ncase-slide { border-radius: 0; border: none; box-shadow: none; }
+  .ncase-deck .ncase-slide:first-child { border-top-left-radius: 16px; border-top-right-radius: 16px; }
+  .ncase-deck .ncase-slide:last-child { border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; }
+</style>
+</head>
+<body class="ab-scope">
+  <nav class="cs-nav">
+    <div class="cs-nav-inner">
+      <a class="cs-back" href="Portfolio.html#work" data-cursor><span class="ar">←</span> Back to work</a>
+      <span class="cs-nav-name"><span class="badge"></span> Astro Bharat</span>
+    </div>
+  </nav>
+
+  <header class="cs-hero">
+    <div class="eyebrow">Case Study · Brand &amp; Product</div>
+    <h1>Astro Bharat.</h1>
+    <p>A full rebrand and product build for an Indian astrology platform — identity, design system and the complete consultation app — scaled from 0→1 into a revenue-generating business in six months, with 9K+ downloads in the first two.</p>
+    <div class="cs-meta">
+      <div><span class="k">Role</span><span class="v">Product &amp; Brand Designer</span></div>
+      <div><span class="k">Type</span><span class="v">Full rebrand · 0→1</span></div>
+      <div><span class="k">Focus</span><span class="v">Identity · System · App</span></div>
+      <div><span class="k">Scope</span><span class="v">Logo, guidelines, product &amp; launch</span></div>
+    </div>
+  </header>
+
+  <div class="ab-switch-wrap">
+    <div class="ab-switch" role="tablist" aria-label="View Astro Bharat brand or product case study">
+      <button type="button" id="tab-brand" class="active" role="tab" aria-selected="true">Brand</button>
+      <button type="button" id="tab-project" role="tab" aria-selected="false">Project</button>
+    </div>
+  </div>
+
+  <div class="ab-panel active" id="panel-brand">
+    <div class="ab-panel-head reveal">
+      <div class="eyebrow">Brand Identity</div>
+      <p>Logo, symbol system, colour, typography and launch collateral for the Astro Bharat identity.</p>
+    </div>
+    <div class="ncase-deck" id="deck-brand"></div>
+  </div>
+
+  <div class="ab-panel" id="panel-project">
+    <div class="ab-panel-head reveal">
+      <div class="eyebrow">Product Design</div>
+      <p>End-to-end product design for the Astro Bharat app — role &amp; background, research, system, onboarding, home, consultation flows and the astrologer-facing app.</p>
+    </div>
+    <div class="ncase-deck" id="deck-project"></div>
+  </div>
+
+  <footer class="cs-foot">
+    <a href="Portfolio.html#work" data-cursor><span class="ar">←</span> Back to all work</a>
+    <span class="credit">Astro Bharat · brand &amp; product, 2023</span>
+  </footer>
+
+  <script>
+    const brandSlides = [
+      ['assets/astro-bharat/01.webp', 'Astro Bharat — primary logo lockup', 1500, 844],
+      ['assets/astro-bharat/02.webp', 'Core offerings — birth chart, numerology, planetary & relationship guidance', 1500, 1125],
+      ['assets/astro-bharat/03.webp', 'Logo anatomy — the meaning behind every element', 1500, 1000],
+      ['assets/astro-bharat/04.webp', 'Symbol construction — balance inspired by the cosmos', 1500, 1000],
+      ['assets/astro-bharat/05.webp', 'Clear space & proportions', 1500, 850],
+      ['assets/astro-bharat/06.webp', 'Logo on light & dark backgrounds', 1500, 768],
+      ['assets/astro-bharat/07.webp', 'Colour tints & shades', 1500, 849],
+      ['assets/astro-bharat/08.webp', 'Typography system — Playfair Display & Inter', 1500, 1000],
+      ['assets/astro-bharat/09.webp', 'Colour palette & meaning', 1500, 1000],
+      ['assets/astro-bharat/10.webp', 'App store creatives', 1500, 804],
+      ['assets/astro-bharat/11.webp', 'Brand stationery & app splash', 1500, 1000],
+      ['assets/astro-bharat/12.webp', 'Tote bag & storefront signage', 1500, 730],
+      ['assets/astro-bharat/13.webp', 'Branded notebook', 1500, 1001],
+    ];
+    const projectSlides = [
+      ['assets/astro-bharat-project/01.webp', 'Astro Bharat app — cover, phone mockups on marble plinth', 1600, 901],
+      ['assets/astro-bharat-project/02.webp', 'Role & background — full rebrand, product experience and design system', 1600, 784],
+      ['assets/astro-bharat-project/03.webp', 'The challenge — building a premium, trustworthy, distinctive experience', 1600, 784],
+      ['assets/astro-bharat-project/04.webp', 'Assets — icons, category icons, line icons and illustrations', 1600, 1067],
+      ['assets/astro-bharat-project/05.webp', 'System — colour styles, typography, assets, shadows and spacing', 1600, 992],
+      ['assets/astro-bharat-project/06.webp', 'Onboarding screens — welcome, best astrologers, features, login and OTP', 1600, 758],
+      ['assets/astro-bharat-project/07.webp', 'Home page — full scroll with annotations', 1600, 4704],
+      ['assets/astro-bharat-project/08.webp', 'Screens — call and chat consultation flows', 1600, 758],
+      ['assets/astro-bharat-project/09.webp', 'Chat flow & features — full interaction map', 1600, 758],
+      ['assets/astro-bharat-project/10.webp', 'Call & chat feature — four-step consultation flow', 1600, 1420],
+      ['assets/astro-bharat-project/11.webp', 'Astrologer app — dashboard, earnings, history and conclusion', 1600, 926],
+      ['assets/astro-bharat-project/12.webp', 'Live feature — real-time connection flow', 1600, 1429],
+      ['assets/astro-bharat-project/13.webp', 'Live feature screens — audio/video call and gift sharing', 1600, 1609],
+    ];
+    function buildDeck(id, slides) {
+      const deck = document.getElementById(id);
+      slides.forEach(([src, alt, w, h], i) => {
+        const fig = document.createElement('div');
+        fig.className = 'ncase-slide reveal';
+        const img = document.createElement('img');
+        img.src = src; img.alt = alt;
+        img.loading = i === 0 ? 'eager' : 'lazy';
+        img.decoding = 'async';
+        img.width = w; img.height = h;
+        fig.appendChild(img);
+        deck.appendChild(fig);
+      });
+    }
+    buildDeck('deck-brand', brandSlides);
+    buildDeck('deck-project', projectSlides);
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.ncase-slide, .ab-panel-head').forEach((el) => io.observe(el));
+
+    const tabBrand = document.getElementById('tab-brand');
+    const tabProject = document.getElementById('tab-project');
+    const panelBrand = document.getElementById('panel-brand');
+    const panelProject = document.getElementById('panel-project');
+
+    function showPanel(which) {
+      const toBrand = which === 'brand';
+      tabBrand.classList.toggle('active', toBrand);
+      tabProject.classList.toggle('active', !toBrand);
+      tabBrand.setAttribute('aria-selected', toBrand);
+      tabProject.setAttribute('aria-selected', !toBrand);
+      panelBrand.classList.toggle('active', toBrand);
+      panelProject.classList.toggle('active', !toBrand);
+      // trigger reveal for any slides in the panel being shown that haven't animated yet
+      const activePanel = toBrand ? panelBrand : panelProject;
+      activePanel.querySelectorAll('.reveal:not(.in)').forEach((el) => {
+        requestAnimationFrame(() => el.classList.add('in'));
+      });
+      history.replaceState(null, '', which === 'brand' ? location.pathname : `${location.pathname}#project`);
+    }
+
+    tabBrand.addEventListener('click', () => showPanel('brand'));
+    tabProject.addEventListener('click', () => showPanel('project'));
+    if (location.hash === '#project') showPanel('project');
+  </script>
+</body>
+</html>
